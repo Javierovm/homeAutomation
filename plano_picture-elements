@@ -1,0 +1,242 @@
+type: picture-elements
+elements:
+  - type: state-icon
+    entity: switch.zocalo_switch
+    tap_action:
+      action: toggle
+    title: null
+    style:
+      top: 54.5%
+      left: 40%
+  - type: conditional
+    conditions:
+      - entity: switch.sofa_switch
+        state: 'on'
+      - entity: light.sofa_nightlight
+        state: 'on'
+    elements:
+      - type: state-icon
+        entity: light.sofa_nightlight
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+        double_tap_action:
+          action: call-service
+          service: script.night_mode_sofa_off
+        style:
+          top: 86%
+          left: 20%
+  - type: conditional
+    conditions:
+      - entity: switch.sofa_switch
+        state: 'on'
+      - entity: light.yeelight_salon
+        state: 'on'
+    elements:
+      - type: state-icon
+        entity: light.yeelight_salon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+        double_tap_action:
+          action: call-service
+          service: script.night_mode_sofa_on
+        style:
+          top: 86%
+          left: 20%
+  - type: conditional
+    conditions:
+      - entity: switch.sofa_switch
+        state: 'off'
+    elements:
+      - type: state-icon
+        entity: switch.sofa_switch
+        tap_action:
+          action: toggle
+        double_tap_action:
+          action: more-info
+        style:
+          top: 86%
+          left: 20%
+  - type: conditional
+    conditions:
+      - entity: switch.sofa_switch
+        state: 'on'
+      - entity: light.yeelight_salon
+        state: 'off'
+      - entity: light.sofa_nightlight
+        state: 'off'
+    elements:
+      - type: state-icon
+        entity: switch.sofa_switch
+        tap_action:
+          action: toggle
+        double_tap_action:
+          action: more-info
+        style:
+          top: 86%
+          left: 20%
+  - type: conditional
+    conditions:
+      - entity: switch.sofa_switch
+        state: 'on'
+      - entity: light.yeelight_salon
+        state: unavailable
+    elements:
+      - type: state-icon
+        entity: switch.sofa_switch
+        tap_action:
+          action: toggle
+        double_tap_action:
+          action: more-info
+        style:
+          top: 86%
+          left: 20%
+  - type: state-label
+    entity: sensor.sensor_fibaro_luminance
+    title: null
+    style:
+      top: 10%
+      left: 28.5%
+  - type: state-label
+    entity: sensor.sensor_fibaro_temperature
+    title: Terrazasss
+    style:
+      top: 16%
+      left: 28.5%
+  - type: state-label
+    entity: sensor.salon_temperature
+    style:
+      top: 62%
+      left: 24%
+  - type: state-label
+    entity: sensor.maria_temperature
+    style:
+      top: 32%
+      left: 64%
+  - type: state-label
+    entity: sensor.dormitorio_temperature
+    style:
+      top: 32%
+      left: 87%
+  - type: state-icon
+    entity: cover.persiana_cocina_level
+    style:
+      top: 26%
+      left: 38.5%
+  - type: state-icon
+    entity: cover.persiana_salon_level_2
+    style:
+      top: 26%
+      left: 18.5%
+  - type: state-icon
+    entity: cover.persiana_maria_level
+    style:
+      top: 4%
+      left: 63%
+  - type: state-icon
+    entity: cover.persiana_dormitorio_principal_level
+    style:
+      top: 4%
+      left: 86%
+  - type: state-icon
+    entity: switch.dormitorio_principal_switch_2
+    tap_action:
+      action: toggle
+    style:
+      top: 22%
+      left: 87%
+  - type: state-icon
+    entity: switch.dormitorio_principal_switch_1
+    tap_action:
+      action: toggle
+    style:
+      top: 58%
+      left: 78%
+  - type: state-icon
+    entity: switch.armario_maria_switch
+    tap_action:
+      action: toggle
+    style:
+      top: 40%
+      left: 66%
+  - type: state-icon
+    entity: switch.dormitorio_maria_switch_2
+    tap_action:
+      action: toggle
+    style:
+      top: 22%
+      left: 62%
+  - type: state-icon
+    entity: light.bano_level
+    tap_action:
+      action: toggle
+    style:
+      top: 70%
+      left: 91%
+  - type: state-icon
+    entity: switch.aseo_switch
+    tap_action:
+      action: toggle
+    style:
+      top: 74%
+      left: 73%
+  - type: state-icon
+    entity: switch.tendedero_switch
+    tap_action:
+      action: toggle
+    style:
+      top: 12%
+      left: 40%
+  - type: state-icon
+    entity: switch.terraza_switch
+    tap_action:
+      action: toggle
+    style:
+      top: 12%
+      left: 16%
+  - type: state-icon
+    entity: switch.pasillo_switch
+    tap_action:
+      action: toggle
+    style:
+      top: 59%
+      left: 60%
+  - type: state-icon
+    entity: switch.hall_switch
+    tap_action:
+      action: toggle
+    style:
+      top: 90%
+      left: 50%
+  - type: state-icon
+    entity: switch.vitrina_switch
+    tap_action:
+      action: toggle
+    style:
+      top: 42%
+      left: 6%
+  - type: state-icon
+    entity: switch.cocina_switch
+    tap_action:
+      action: toggle
+    style:
+      top: 40%
+      left: 40%
+  - type: state-icon
+    entity: switch.cocina_switch
+    tap_action:
+      action: toggle
+    style:
+      top: 68%
+      left: 40%
+  - type: state-icon
+    entity: light.mesa_level_2
+    tap_action:
+      action: toggle
+    style:
+      top: 42%
+      left: 14%
+image: local/Casa2.png
